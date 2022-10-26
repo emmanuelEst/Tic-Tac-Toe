@@ -1,0 +1,2 @@
+
+generate_empty_board
