@@ -1,7 +1,13 @@
 # frozen_string_literal: false
 
 # Used to display the different states of the board
-module Board
+class Board
+  attr_reader :states
+
+  def initialize
+    @states = Array.new(3) { Array.new(3, 0) }
+  end
+
   def generate_empty_board
     puts ''
     empty_line = '         |         |         '
