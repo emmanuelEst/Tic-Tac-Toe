@@ -4,14 +4,13 @@
 class Board
   attr_reader :states
 
-  @divider = '_________|_________|_________'
-  @empty_line = '         |         |         '
-
   def initialize
     @states = Array.new(3) { Array.new(3, 0) }
+    @divider = '_________|_________|_________'
+    @empty_line = '         |         |         '
   end
 
-  def self.generate_empty_board
+  def generate_empty_board
     puts ''
     # 14 lines is the height of the board
     # Lines 4 and 9 are the horizontal dividers
