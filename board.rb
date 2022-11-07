@@ -2,7 +2,7 @@
 
 # Used to display the different states of the board
 class Board
-  attr_reader :states
+  attr_accessor :states
 
   O_SIGN = [
     ['  ___  '],
@@ -12,17 +12,17 @@ class Board
   ].freeze
 
   X_SIGN = [
-    ['__  __'],
-    ['\ \/ /'],
-    [' >  < '],
-    ['/_/\_\\']
+    ["__  __\s"],
+    ["\\ \\/ /\s"],
+    [" >  < \s"],
+    ["/_/\\_\\\s"]
   ].freeze
 
   EMPTY = [
-    ['      '],
-    ['      '],
-    ['      '],
-    ['      ']
+    ["\s\s\s\s\s\s\s"],
+    ["\s\s\s\s\s\s\s"],
+    ["\s\s\s\s\s\s\s"],
+    ["\s\s\s\s\s\s\s"]
   ].freeze
 
   SIGN_HASH = {
@@ -33,7 +33,7 @@ class Board
 
   def initialize
     @states = Array.new(3) { Array.new(3, 0) }
-    @divider = '|________|_________|________|'
+    @divider = '|_________|_________|_________|'
   end
 
   def generate_empty_board

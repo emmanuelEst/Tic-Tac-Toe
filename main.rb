@@ -3,4 +3,3 @@
 require_relative 'board'
 
 board = Board.new
-board.generate_board
