@@ -36,14 +36,6 @@ class Board
     @divider = '|_________|_________|_________|'
   end
 
-  def generate_empty_board
-    puts ''
-    # 14 lines is the height of the board
-    # Lines 4 and 9 are the horizontal dividers
-    14.times { |i| puts [4, 9].include?(i) ? @divider : @empty_line }
-    puts ''
-  end
-
   def generate_row(sub_array)
     lines = Array.new(4) { Array.new(1, '| ') }
     sub_array.each do |sign|
@@ -76,5 +68,5 @@ class Board
 
   def edges_check?; end
 
-  private :across_check?, :diagonal_check?, :edges_check?
+  private :across_check?, :diagonal_check?, :edges_check?, :generate_row
 end
