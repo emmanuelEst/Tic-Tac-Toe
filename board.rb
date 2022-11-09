@@ -61,4 +61,20 @@ class Board
       generate_row(states[row])
     end
   end
+
+  def check_board(sign); end
+
+  def across_check?(sign)
+    rows = []
+    states.each do |row|
+      rows.push(row.all? { |elem| elem == sign })
+    end
+    rows.any?
+  end
+
+  def diagonal_check?; end
+
+  def edges_check?; end
+
+  private :across_check?, :diagonal_check?, :edges_check?
 end
