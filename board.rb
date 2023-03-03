@@ -56,12 +56,15 @@ class Board
 
   def check_board(sign); end
 
+  # across_check
+  # takes in the sign either 'X' or 'O' and checks if any of the rows all have matching signs
+  # the resulting boolean is fed into check_board
   def across_check?(sign)
     rows = []
-    states.each do |row|
-      rows.push(row.all? { |elem| elem == sign })
+    states.each do |row| # Loops over each 'row' in states
+      rows.push(row.all? { |elem| elem == sign }) # pushes the result of all? on each row to rows
     end
-    rows.any?
+    rows.any? # checks if any values in rows is true and returns that boolean
   end
 
   def diagonal_check?; end
