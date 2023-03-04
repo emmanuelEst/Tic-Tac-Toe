@@ -67,7 +67,16 @@ class Board
     rows.any? # checks if any values in rows is true and returns that boolean
   end
 
-  def diagonal_check?; end
+  def diagonal_check?(sign)
+    test_values1 = []
+    test_values2 = []
+
+    states.each_index do |index|
+      test_values1.push(states[index][index]) # The index of the row always matches the index element for left to right
+      test_values2.push(states[index][2 - index]) # 2 - index access the values for right to left diagonal
+    end
+    return true if test_values1.all? { |token| token == sign } || test_values2.all? { |token| token == sign }
+  end
 
   def edges_check?; end
 
