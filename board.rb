@@ -78,7 +78,9 @@ class Board
     return true if test_values1.all? { |token| token == sign } || test_values2.all? { |token| token == sign }
   end
 
-  def edges_check?; end
+  def edges_check?(sign)
+    states.transpose.any? { |column| column.all? { |token| token == sign } }
+  end
 
   private :across_check?, :diagonal_check?, :edges_check?, :generate_row
 end
