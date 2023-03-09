@@ -54,7 +54,11 @@ class Board
     end
   end
 
-  def check_board(sign); end
+  def check_board(sign, player)
+    return unless [across_check?(sign), diagonal_check?(sign), edges_check?(sign)].any?
+
+    puts "#{player} has won the game!"
+  end
 
   # across_check
   # takes in the sign either 'X' or 'O' and checks if any of the rows all have matching signs
