@@ -3,8 +3,7 @@
 # Player class used to contain information like:
 #   name, team, and current plays
 class Player
-  attr_reader :name, :team
-  attr_accessor :plays
+  attr_accessor :name, :team, :plays
 
   def initialize(name, team)
     @name = name

@@ -54,10 +54,8 @@ class Board
     end
   end
 
-  def check_board(sign, player)
-    return unless [across_check?(sign), diagonal_check?(sign), edges_check?(sign)].any?
-
-    puts "#{player} has won the game!"
+  def check_board?(sign)
+    [across_check?(sign), diagonal_check?(sign), edges_check?(sign)].any?
   end
 
   # across_check
